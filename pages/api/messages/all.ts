@@ -6,9 +6,9 @@ const getAllMessagesHandler = async (req: NextApiRequest, res: NextApiResponse) 
   try {
     await connectToMongoDB();
 
-    // const messages = await Message.find();
+    const messages = await Message.find();
 
-    res.status(200).json({ success: true, 1: 'messages' });
+    res.status(200).json({ success: true, messages });
   } catch (error) {
     console.error("Error retrieving messages:", error);
     res.status(500).json({ error: "Internal Server Error" });
