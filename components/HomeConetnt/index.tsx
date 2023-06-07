@@ -19,8 +19,8 @@ const HomeContent = (props: Props) => {
   const [submitError, setSubmitError] = useState("");
   
   const { data: session } = useSession();
-  console.log("dataNavbar", session);
-  console.log("messages", messages);
+  // console.log("dataNavbar", session);
+  // console.log("messages", messages);
 
   const getAllMessages = async () => {
     try {
