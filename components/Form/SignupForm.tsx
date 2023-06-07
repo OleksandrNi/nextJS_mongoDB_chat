@@ -64,7 +64,8 @@ const SignupForm = () => {
       try {
         setLoading(true);
         const apiRes = await axios.post(
-          "http://localhost:3000/api/auth/signup",
+          // "http://localhost:3000/api/auth/signup",
+          "http://next-js-mongo-db-chat.vercel.app/api/auth/signup",
           data
         );
 
