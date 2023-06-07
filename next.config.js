@@ -3,7 +3,10 @@ const nextConfig = {
   reactStrictMode: true,
   compiler: {
     styledComponents: true
+  },
+  env: {
+    NEXTAUTH_URL: process.env.NEXTAUTH_URL
   }
-}
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;

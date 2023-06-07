@@ -24,7 +24,7 @@ const HomeContent = (props: Props) => {
 
   const getAllMessages = async () => {
     try {
-      const apiRes = await axios.get("http://localhost:3000/api/messages/all");
+      const apiRes = await axios.get(`${process.env.NEXTAUTH_URL}/api/messages/all`);
 
       if (apiRes?.data?.success) {
         setMessages(apiRes.data.messages);
@@ -53,7 +53,7 @@ const HomeContent = (props: Props) => {
     try {
       const token = localStorage.getItem("token");
       const apiRes = await axios.post(
-        "http://localhost:3000/api/messages/create",
+        `${process.env.NEXTAUTH_URL}/api/messages/create`,
         {
           title: newTitle,
           content: newContent,
@@ -94,7 +94,7 @@ const HomeContent = (props: Props) => {
     try {
       const token = localStorage.getItem("token");
       const apiRes = await axios.delete(
-        `http://localhost:3000/api/messages/${messageId}`,
+        `${process.env.NEXTAUTH_URL}/api/messages/api/messages/${messageId}`,
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -125,7 +125,7 @@ const HomeContent = (props: Props) => {
     try {
       const token = localStorage.getItem("token");
       const apiRes = await axios.post(
-        `http://localhost:3000/api/messages/${editMessage?._id}`,
+        `${process.env.NEXTAUTH_URL}/api/messages/api/messages/${editMessage?._id}`,
         {
           title: editTitle, // Используем текущее значение editTitle
           content: editContent, // Используем текущее значение editContent
