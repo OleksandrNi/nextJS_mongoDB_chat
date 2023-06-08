@@ -94,7 +94,7 @@ const HomeContent = (props: Props) => {
     try {
       const token = localStorage.getItem("token");
       const apiRes = await axios.delete(
-        `${process.env.NEXTAUTH_URL}/api/messages/api/messages/${messageId}`,
+        `${process.env.NEXTAUTH_URL}/api/messages/${messageId}`,
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -125,7 +125,7 @@ const HomeContent = (props: Props) => {
     try {
       const token = localStorage.getItem("token");
       const apiRes = await axios.post(
-        `${process.env.NEXTAUTH_URL}/api/messages/api/messages/${editMessage?._id}`,
+        `${process.env.NEXTAUTH_URL}/api/messages/${editMessage?._id}`,
         {
           title: editTitle, // Используем текущее значение editTitle
           content: editContent, // Используем текущее значение editContent
