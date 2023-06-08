@@ -24,7 +24,7 @@ export const NavLink = styled(Link) <{ large?: boolean }>`
     padding: 1rem;
     margin-left: 1rem;
     font-size: ${props => props.large ? '1.5rem' : '1rem'};
-    color: ${props => props.color || '#132424'};
+    color: ${props => props.color ?? '#132424'};
 
     &:hover {
         color: #a6a2a2;
@@ -46,6 +46,7 @@ export const CloseIcon = styled(AiFillCloseCircle)`
 
 export const OverlayMenu = styled.div`
     position: fixed;
+    z-index: 1;
     top: 0;
     left: 0;
     width: 100vw;

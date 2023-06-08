@@ -10,6 +10,7 @@ export interface IMessage extends Document {
 export interface IComment {
   content: string;
   author: string;
+  _id?: string;
 }
 
 const CommentSchema = new Schema<IComment>(

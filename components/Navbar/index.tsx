@@ -19,7 +19,7 @@ const Navbar = () => {
   const size: WindowSize = useWindowSize();
   const [showMenu, setShowMenu] = useState(false);
   const { data: session } = useSession();
-  
+
   const openMenu = () => {
     setShowMenu(true);
   };
@@ -61,9 +61,13 @@ const Navbar = () => {
             <NavLink route="/products" large color="white" onClick={closeMenu}>
               Products
             </NavLink>
-            <NavLink route="/login" large color="white" onClick={closeMenu}>
-              Login
-            </NavLink>
+            {session ? (
+              <NavLink route="/profile" large color="white" onClick={closeMenu}>Profile</NavLink>
+            ) : (
+              <NavLink route="/login" large color="white" onClick={closeMenu}>
+                Login
+              </NavLink>
+            )}
           </MenuLinkContainer>
         </OverlayMenu>
       )}
