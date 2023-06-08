@@ -2,8 +2,8 @@ import React, { useState, useEffect } from "react";
 import { Container } from "./HomeElements";
 import axios from "axios";
 import { IMessage } from "../../models/message";
-import CreateMessage from "../CreateMessage/CreateMessage";
 import MessageForm from "../MessageForm/MessageForm";
+import CreateMessage from "../CreateMessage/CreateMessage";
 
 type Props = {};
 
