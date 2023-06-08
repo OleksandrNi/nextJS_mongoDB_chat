@@ -21,11 +21,16 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-icons": "^4.7.1",
+    "sass": "^1.63.2",
+    "socket.io": "^4.6.2",
+    "socket.io-client": "^4.6.2",
     "styled-components": "^5.3.6",
     "typescript": "4.9.4"
   },
   "devDependencies": {
     "@types/bcryptjs": "^2.4.2",
-    "@types/styled-components": "^5.1.26"
+    "@types/styled-components": "^5.1.26",
+    "node-sass": "^7.0.3",
+    "sass-loader": "^13.3.1"
   }
 }

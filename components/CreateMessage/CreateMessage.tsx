@@ -3,13 +3,15 @@ import Button from "../Button";
 import InputFeild from "../InputFeild/InputFeild";
 import axios from "axios";
 
+import styles from "./CreateMessage.module.scss";
+
 interface CreateMessageProps {
   getAllMessages: () => Promise<void>;
 }
 
 const CreateMessage: React.FC<CreateMessageProps> = ({ getAllMessages }) => {
   const [loading, setLoading] = useState(false);
-    
+
   const [submitError, setSubmitError] = useState("");
 
   const [newTitle, setNewTitle] = useState("");
@@ -28,7 +30,7 @@ const CreateMessage: React.FC<CreateMessageProps> = ({ getAllMessages }) => {
   };
 
   const handleCreateMessage = async () => {
-    setLoading(true)
+    setLoading(true);
     try {
       const token = localStorage.getItem("token");
       const apiRes = await axios.post(
@@ -49,34 +51,39 @@ const CreateMessage: React.FC<CreateMessageProps> = ({ getAllMessages }) => {
         setNewTitle("");
         setNewContent("");
         await getAllMessages();
-        setLoading(false)
+        setLoading(false);
       }
     } catch (error) {
       console.error("Error creating message:", error);
       setSubmitError("Error creating message");
-      setLoading(false)
+      setLoading(false);
     }
   };
 
   return (
-    <div>
-    <InputFeild
-      type="text"
-      placeholder={"Title"}
-      value={newTitle}
-      name="Title"
-      onChange={handleNewTitleChange}
-    />
-    <InputFeild
-      type="text"
-      placeholder={"Content"}
-      value={newContent}
-      name="Content"
-      onChange={handleNewContentChange}
-    />
-    <Button onClick={handleCreateMessage} title={"Create Message"} type="button" disabled={loading} />
-    {submitError && <p>{submitError}</p>}
-  </div>
+    <div className={styles.container}>
+      <InputFeild
+        type="text"
+        placeholder={"Title"}
+        value={newTitle}
+        name="Title"
+        onChange={handleNewTitleChange}
+      />
+      <InputFeild
+        type="text"
+        placeholder={"Content"}
+        value={newContent}
+        name="Content"
+        onChange={handleNewContentChange}
+      />
+      <Button
+        onClick={handleCreateMessage}
+        title={"Create Message"}
+        type="button"
+        disabled={loading}
+      />
+      {submitError && <p>{submitError}</p>}
+    </div>
   );
 };
 

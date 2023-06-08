@@ -3,6 +3,8 @@ import axios from "axios";
 import { IMessage } from "../../models/message";
 import { useSession } from "next-auth/react";
 
+import styles from "./MessageForm.module.scss";
+
 interface MessageFormProps {
   getAllMessages: () => Promise<void>;
   message: IMessage;
@@ -127,7 +129,7 @@ const MessageForm: React.FC<MessageFormProps> = ({
   };
 
   return (
-    <div style={{ display: "flex", gap: "10px" }}>
+    <div className={styles.container}>
       {editMessage && editMessage._id === message._id ? (
         <div>
           <input

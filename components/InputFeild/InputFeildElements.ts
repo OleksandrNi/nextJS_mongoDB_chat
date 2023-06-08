@@ -23,8 +23,8 @@ export const Input = styled.input`
     border: 1px solid rgba(0, 0, 0, 0.25);
     border-radius: 4px;
     width: 100%;
+    height: 3rem;
 `
-
 const EyeIcon = css`
     position: absolute;
     right: 25px;

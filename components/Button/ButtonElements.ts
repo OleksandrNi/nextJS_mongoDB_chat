@@ -1,6 +1,9 @@
 import styled from "styled-components";
 
 export const Container = styled.button`
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background-color: ${props => props.disabled ? 'lightgray' : '#23C687'};
     color: ${props => props.disabled ? 'black' : '#fff'};
     font-size: 0.9rem;
@@ -11,6 +14,7 @@ export const Container = styled.button`
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
     width: 100%;
     border: none;
+    height: 3rem;
 
     &:hover {
         background-color: ${props => props.disabled ? 'lightgray' : '#707070'};

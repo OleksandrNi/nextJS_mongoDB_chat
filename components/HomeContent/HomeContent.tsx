@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { Container } from "./HomeElements";
 import axios from "axios";
 import { IMessage } from "../../models/message";
 import MessageForm from "../MessageForm/MessageForm";
 import CreateMessage from "../CreateMessage/CreateMessage";
+import styles from './HomeContent.module.scss';
 
 type Props = {};
 
@@ -26,14 +26,14 @@ const HomeContent = (props: Props) => {
 
   useEffect(() => {
     getAllMessages();
+    const interval = setInterval(getAllMessages, 5000); // Отправлять запрос каждые 5 секунд
+    return () => clearInterval(interval); // Очистить интервал при размонтировании компонента
   }, []);
 
   return (
-    <Container>
+    <div className={styles.container}>
       <CreateMessage getAllMessages={getAllMessages} />
-      <br />
-
-      <div style={{ display: "flex", flexDirection: "column" }}>
+      <div className={styles.messages}>
         {messages.map((message) => (
           <MessageForm
             key={message._id}
@@ -42,7 +42,7 @@ const HomeContent = (props: Props) => {
           />
         ))}
       </div>
-    </Container>
+    </div>
   );
 };
 
