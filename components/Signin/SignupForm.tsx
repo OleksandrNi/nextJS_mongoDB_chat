@@ -64,7 +64,7 @@ const SignupForm = () => {
       try {
         setLoading(true);
         const apiRes = await axios.post(
-          `${process.env.NEXTAUTH_URL}api/auth/signup`,
+          `${process.env.NEXTAUTH_URL}/api/auth/signup`,
           data
         );
 
