@@ -1,0 +1,43 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: lightgray;
+  color: black;
+  font-size: 0.9rem;
+  padding: 0.8rem;
+  transition: all 0.5s;
+  border-radius: 5px;
+  cursor: not-allowed;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
+  width: 100%;
+  border: none;
+  height: 3rem;
+
+  &:hover {
+    background-color: #707070;
+  }
+
+  &_variant {
+    &_text {
+      background-color: blueviolet;
+    }
+
+    &_contained {
+      background-color: palevioletred;
+    }
+
+    &_outlined {
+      background-color: goldenrod;
+    }
+  }
+}
+
+.disabled {
+  background-color: lightgray;
+  color: black;
+  cursor: not-allowed;
+}
+
+.customWidth {
+}
