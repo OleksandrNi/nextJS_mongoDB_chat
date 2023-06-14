@@ -16,7 +16,6 @@ import { InputErros } from "../../types/error";
 import { getErrorMsg, loginUser } from "../../helpers";
 import { useRouter } from "next/router";
 import axios, { AxiosError } from "axios";
-import { ErrorText } from "../InputFeild/InputFeildElements";
 
 const SignupForm = () => {
   const [data, setData] = useState({
@@ -144,7 +143,7 @@ const SignupForm = () => {
 
         <Button title={"Sign up"} type="submit" disabled={loading} />
 
-        {submitError && <ErrorText>{submitError}</ErrorText>}
+        {submitError && <div>{submitError}</div>}
 
         <InfoTextContainer>
           <InfoText>Already have account?</InfoText>
