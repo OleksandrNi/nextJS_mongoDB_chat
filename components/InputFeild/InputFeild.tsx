@@ -1,13 +1,7 @@
 import React, { useState } from "react";
 import { InputProps } from "../../types/propTypes";
-import {
-  Container,
-  HidePassIcon,
-  Input,
-  ShowPassIcon,
-  Wrapper,
-  ErrorText,
-} from "./InputFeildElements";
+import { BsEye, BsEyeSlash } from 'react-icons/bs';
+import styles from "./InputFeild.module.scss";
 
 const InputFeild = ({
   placeholder,
@@ -27,20 +21,21 @@ const InputFeild = ({
 
   const renderPasswordIcon = () => {
     if (showPassword) {
-      return <HidePassIcon onClick={togglePasswordIcon} />;
+      return <BsEyeSlash className={styles.eyeIcon} onClick={togglePasswordIcon} />;
     } else {
-      return <ShowPassIcon onClick={togglePasswordIcon} />;
+      return <BsEye className={styles.eyeIcon} onClick={togglePasswordIcon} />;
     }
   };
 
   const inputType = type === "password" && showPassword ? "text" : type;
 
   return (
-    <Container>
-      <Wrapper>
+    <div className={styles.container}>
+      <div className={styles.wrapper}>
         {icon}
 
-        <Input
+        <input
+          className={styles.input}
           placeholder={placeholder}
           type={inputType}
           required={required}
@@ -50,10 +45,10 @@ const InputFeild = ({
         />
 
         {type === "password" && renderPasswordIcon()}
-      </Wrapper>
+      </div>
 
-      {error && <ErrorText>{error}</ErrorText>}
-    </Container>
+      {error && <p className={styles.errorText}>{error}</p>}
+    </div>
   );
 };
 

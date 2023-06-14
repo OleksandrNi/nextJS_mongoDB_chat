@@ -22,4 +22,7 @@ export interface ButtonProps {
     type?: 'submit' | 'button' | 'reset';
     disabled?: boolean;
     onClick?: () => void;
+    width?: string;
+    height?: string;
+    variant?: 'text' | 'contained' | 'outlined' ;
 }

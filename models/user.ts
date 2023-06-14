@@ -1,5 +1,6 @@
 import { Schema, model, models } from "mongoose";
 
+
 const UserSchema = new Schema({
   email: {
     type: String,
@@ -20,6 +21,22 @@ const UserSchema = new Schema({
     type: String,
     required: [true, "Password is required"],
     select: false,
+  },
+  name: {
+    type: String,
+    required: false,
+  },
+  surname: {
+    type: String,
+    required: false,
+  },
+  address: {
+    type: String,
+    required: false,
+  },
+  phone: {
+    type: String,
+    required: false,
   },
 });
 

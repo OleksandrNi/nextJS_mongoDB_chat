@@ -7,8 +7,6 @@ const createMessageHandler = async (req: NextApiRequest, res: NextApiResponse) =
   try {
     const session = await getSession({ req });
 
-    console.log('session', session)
-
     if (!session) {
       return res.status(401).json({ error: "Unauthorized" });
     }

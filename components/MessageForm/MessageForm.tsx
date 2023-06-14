@@ -17,7 +17,8 @@ const MessageForm: React.FC<MessageFormProps> = ({
   const [editTitle, setEditTitle] = useState("");
   const [editContent, setEditContent] = useState("");
   const [editMessage, setEditMessage] = useState<IMessage | null>(null);
-
+  const [newComment, setNewComment] = useState("");
+  
   const { data: session } = useSession();
 
   const handleEditTitleChange = (
@@ -90,7 +91,6 @@ const MessageForm: React.FC<MessageFormProps> = ({
     }
   };
 
-  const [newComment, setNewComment] = useState("");
 
   const handleNewCommentChange = (
     event: React.ChangeEvent<HTMLInputElement>
@@ -171,7 +171,7 @@ const MessageForm: React.FC<MessageFormProps> = ({
             <button onClick={handleAddComment}>Add Comment</button>
           </div>
           {message.comments.map((comment) => (
-            <div key={comment._id}>{comment.content}</div>
+            <div key={comment._id}>{comment.content} {comment.author}</div>
           ))}
         </>
       )}

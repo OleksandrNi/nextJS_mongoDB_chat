@@ -81,6 +81,8 @@ const CreateMessage: React.FC<CreateMessageProps> = ({ getAllMessages }) => {
         title={"Create Message"}
         type="button"
         disabled={loading}
+        width={"150px"}
+        variant='outlined'
       />
       {submitError && <p>{submitError}</p>}
     </div>

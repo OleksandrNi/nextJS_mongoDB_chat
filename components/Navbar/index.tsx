@@ -12,8 +12,9 @@ import {
 } from "./NavElements";
 
 import NavLink from "./NavLink";
-import { useSession } from "next-auth/react";
+import { signOut, useSession } from "next-auth/react";
 import { BsFillPersonFill } from "react-icons/bs";
+import Button from "../Button";
 
 const Navbar = () => {
   const size: WindowSize = useWindowSize();
@@ -37,9 +38,13 @@ const Navbar = () => {
             <NavLink route="/products">Products</NavLink>
 
             {session ? (
+              <div style={{display: 'flex', width: '100%', justifyContent: 'space-between'}}>
+
               <NavLink route="/profile">
                 <BsFillPersonFill size={30} />
               </NavLink>
+              <Button title="Logout" onClick={signOut} />
+              </div>
             ) : (
               <NavLink route="/login">Login</NavLink>
             )}
@@ -61,8 +66,12 @@ const Navbar = () => {
             <NavLink route="/products" large color="white" onClick={closeMenu}>
               Products
             </NavLink>
+            
             {session ? (
-              <NavLink route="/profile" large color="white" onClick={closeMenu}>Profile</NavLink>
+              <div>
+                <NavLink route="/profile" large color="white" onClick={closeMenu}>Profile</NavLink>
+                <Button title="Logout" onClick={signOut} />
+              </div>
             ) : (
               <NavLink route="/login" large color="white" onClick={closeMenu}>
                 Login
