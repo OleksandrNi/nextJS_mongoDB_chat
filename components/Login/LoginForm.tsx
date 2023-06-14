@@ -13,7 +13,6 @@ import {
   Link,
 } from "../Form/FormElements";
 import InputFeild from "../InputFeild/InputFeild";
-import { ErrorText } from "../InputFeild/InputFeildElements";
 
 const LoginForm = () => {
   const [email, setEmail] = useState("");
@@ -80,7 +79,7 @@ const LoginForm = () => {
 
         <Button type="submit" title="Login" disabled={loading} />
 
-        {submitError && <ErrorText>{submitError}</ErrorText>}
+        {submitError && <div>{submitError}</div>}
 
         <InfoTextContainer>
           <InfoText>New User?</InfoText>
