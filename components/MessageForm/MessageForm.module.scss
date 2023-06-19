@@ -1,8 +1,18 @@
 .container {
   display: flex;
   flex-direction: column;
+  gap: 10px;
   border: 1px solid gray;
   padding: 5px;
   border-radius: 5px;
   background-color: #eeebeb;
+
+  .link {
+    background-color: cadetblue;
+    padding: 10px;
+    font-size: 20px;
+    width: fit-content;
+    border: solid 1px;
+    border-radius: 5px;
+  }
 }

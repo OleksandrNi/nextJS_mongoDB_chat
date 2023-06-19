@@ -36,6 +36,7 @@ const Navbar = () => {
           <>
             <NavLink route="/">Home</NavLink>
             <NavLink route="/products">Products</NavLink>
+            <NavLink route="/messages">Messages</NavLink>
 
             {session ? (
               <div style={{display: 'flex', width: '100%', justifyContent: 'space-between'}}>

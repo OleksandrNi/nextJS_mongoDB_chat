@@ -1,0 +1,24 @@
+.container {
+  display: flex;
+  margin: 20px 0;
+  gap: 20px;
+  background-color: blanchedalmond;
+
+}
+
+.message {
+  display: flex;
+  flex-direction: column;
+  margin: 20px 0;
+  gap: 20px;
+}
+
+.error {
+  display: flex;
+  flex-direction: column;
+  margin: 20px 0;
+  gap: 20px;
+  color: red;
+  font-weight: 700;
+  font-size: 20px;
+}

@@ -85,6 +85,7 @@ const CreateMessage: React.FC<CreateMessageProps> = ({ getAllMessages }) => {
         variant='outlined'
       />
       {submitError && <p>{submitError}</p>}
+      
     </div>
   );
 };

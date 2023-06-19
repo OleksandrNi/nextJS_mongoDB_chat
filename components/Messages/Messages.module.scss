@@ -3,3 +3,9 @@
   flex-direction: column;
   padding: 20px;
 }
+
+.messages {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
